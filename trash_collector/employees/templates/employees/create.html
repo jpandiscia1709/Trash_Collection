@@ -6,12 +6,21 @@
 
 {% block content %}
 
+<<<<<<< HEAD
 <form action="{% url 'customers:create' %}" method="post">
+=======
+
+<form action="{% url 'employees:create' %}" method="post">
+>>>>>>> 6be0d65a86aad31f28b4c75fc087ae128ad73282
     {% csrf_token %}
     Name: <input type="text" name="name" id="name"><br />
     Address: <input type="text" name="address" id="address"><br />
     Zip Code: <input type="text" name="zip_code" id="zip_code"><br />
     <input type="submit" value="Register">
+<<<<<<< HEAD
 </form>
 
 {% endblock %}
+=======
+</form>
+>>>>>>> 6be0d65a86aad31f28b4c75fc087ae128ad73282
