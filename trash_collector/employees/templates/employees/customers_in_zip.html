@@ -1,16 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}{% block header %} Employee Home {% endblock %}{% endblock %}
+{% block title %}{% block header %} Customers in Local Zip {% endblock %}{% endblock %}
 
 {% block content %}
   {% if user.is_authenticated %}
-    Hello Employee {{ user.username }}! Today is {{today}}
-    <ul>
-      Your Pickups Today Are:
-      {% for customer in all_customers %}
-      <li><h3>{{customer}}</h3></li>
-      {% endfor %}
-    </ul>
+    Hello Employee {{ user.username }}!
+These are the customers within your local zip code!
+{% for customer in selected_customers %}
+{{employee.name}}
   {% else %}
     <p>You are at the employee index, but you are not logged in.</p>
     <a href="{% url 'login' %}">Log In</a>
