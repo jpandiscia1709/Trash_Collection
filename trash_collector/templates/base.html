@@ -12,6 +12,8 @@
     <div class="navbar-nav">
     {% block navbar %}{% endblock %}
     <a class="nav-item nav-link" href="{% url 'logout' %}">Log Out</a>
+    <a class="nav-item nav-link" href="{% url 'employees:index' %}">Home</a>
+    <a class="nav-item nav-link" href="{% url 'employees:edit_profile' %}">Edit Profile</a>
     </div>
   </nav>
   {% endif %}
