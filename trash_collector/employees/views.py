@@ -1,3 +1,4 @@
+## from trash_collector.customers.models import Customer
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
@@ -63,3 +64,4 @@ def edit_profile(request):
 @login_required
 def customers_in_zip(request):
    pass
+
