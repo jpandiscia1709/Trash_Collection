@@ -1,3 +1,4 @@
+## from trash_collector.customers.models import Customer
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
@@ -56,10 +57,11 @@ def edit_profile(request):
         return HttpResponseRedirect(reverse('employees:index'))
     else:
         context = {
-            'logged_in_emplyee': logged_in_employee
+            'logged_in_employee': logged_in_employee
         }
         return render(request, 'employees/edit_profile.html', context)
 
 @login_required
 def customers_in_zip(request):
-    pass
+   pass
+
