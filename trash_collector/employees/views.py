@@ -56,7 +56,7 @@ def edit_profile(request):
         return HttpResponseRedirect(reverse('employees:index'))
     else:
         context = {
-            'logged_in_emplyee': logged_in_employee
+            'logged_in_employee': logged_in_employee
         }
         return render(request, 'employees/edit_profile.html', context)
 
