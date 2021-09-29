@@ -59,3 +59,7 @@ def edit_profile(request):
             'logged_in_emplyee': logged_in_employee
         }
         return render(request, 'employees/edit_profile.html', context)
+
+@login_required
+def customers_in_zip(request):
+   pass
