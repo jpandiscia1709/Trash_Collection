@@ -5,6 +5,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from datetime import date
 
+# from customers import Customer
 from .models import Employee
 
 @login_required
@@ -62,4 +63,11 @@ def edit_profile(request):
 
 @login_required
 def customers_in_zip(request):
+<<<<<<< HEAD
    pass
+=======
+        my_customers = Customer.objects.filter(zip_code='23451')
+        return my_customers
+
+
+>>>>>>> d2c4805b6bf624cdacf4b17da12f43fad587d227
