@@ -4,13 +4,10 @@
 
 {% block content %}
   {% if user.is_authenticated %}
-    Hello Employee {{ user.username }}! Today is {{today}}
-    <ul>
-      Your Pickups Today Are:
-      {% for customer in all_customers %}
-      <li><h3>{{customer}}</h3></li>
-      {% endfor %}
-    </ul>
+    Hello Employee {{ user.username }}! 
+    <br />
+    Today is {{today}}
+
   {% else %}
     <p>You are at the employee index, but you are not logged in.</p>
     <a href="{% url 'login' %}">Log In</a>
