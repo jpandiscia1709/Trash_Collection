@@ -9,4 +9,5 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('new/', views.create, name="create"),
     path('edit_profile/', views.edit_profile, name="edit_profile"),
+    path('customers_in_zip', views.customers_in_zip, name='customers_in_zip')
 ]
