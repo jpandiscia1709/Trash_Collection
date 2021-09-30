@@ -3,18 +3,15 @@
 {% block title %}{% block header %} Employee Home {% endblock %}{% endblock %}
 
 {% block content %}
-  {% if user.is_authenticated %}
-    Hello Employee {{ user.username }}! 
-    <br />
-    Today is {{today}}
-    
-    ## Need to link the filter function from the view file 
+{% if user.is_authenticated %}
+Hello Employee {{ user.username }}!
+<br />
+Today is {{today}}
 
-  {% else %}
-    <p>You are at the employee index, but you are not logged in.</p>
-    <a href="{% url 'login' %}">Log In</a>
-    <a href="{% url 'accounts:register' %}">Sign Up</a>
-  {% endif %}
+{% else %}
+<p>You are at the employee index, but you are not logged in.</p>
+<a href="{% url 'login' %}">Log In</a>
+<a href="{% url 'accounts:register' %}">Sign Up</a>
+{% endif %}
 
 {% endblock %}
-
