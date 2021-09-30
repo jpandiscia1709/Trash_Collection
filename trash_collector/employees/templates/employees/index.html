@@ -25,6 +25,9 @@ Your Customers Today Are:
 {% for customer in customer_schedule%}
 <li>
     <h3>{{customer.name}} </h3>
+{% for customer in active_accounts%}
+<li>
+<h2>{{customer.name}}</h2>
 </li>
 {% endfor %}
 {% else %}

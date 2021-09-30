@@ -33,6 +33,8 @@ def index(request):
         # <input type="checkbox" id="pickup_Complete" name="pickup_Complete" value="Complete">
         #                 <label for="pickup_Complete"> Pickup Complete</label><br>
 
+        active_accounts = todays_customer.exclude(suspend_start=today)
+        
         context = {
             'logged_in_employee': logged_in_employee,
             'today': today,
@@ -41,6 +43,7 @@ def index(request):
 
             # 'pickup_complete'=pickup_complete
 
+            'active_accounts': active_accounts,
         }
         return render(request, 'employees/index.html', context)
     except ObjectDoesNotExist:
