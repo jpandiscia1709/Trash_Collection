@@ -66,4 +66,5 @@ def customers_in_zip(request):
     Customer = apps.get_model('customers.Customer')
     my_customers = Customer.objects.filter(zip_code='23451')
     return my_customers
+
     
