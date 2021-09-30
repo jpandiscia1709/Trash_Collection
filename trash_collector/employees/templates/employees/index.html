@@ -7,6 +7,10 @@
 Hello Employee {{ user.username }}!
 <br />
 Today is {{today}}
+<br />
+Your customers today are:
+<li>{{todays_customer.name}} - <a href="{% url 'employees:confirm_charge' customer.id %}">*confirm trash pick-up*</a></li>
+
 
 {% else %}
 <p>You are at the employee index, but you are not logged in.</p>
