@@ -26,12 +26,13 @@ def index(request):
         day_name = names_of_days[weekday_number]
         todays_customer = customers_in_zip.filter(
             one_time_pickup=today) | customers_in_zip.filter(weekly_pickup=day_name)
-
+        active_accounts = todays_customer.exclude(suspend_start=today)
+        
         context = {
             'logged_in_employee': logged_in_employee,
             'today': today,
-            'todays_customer': todays_customer
-
+            'todays_customer': todays_customer,
+            'active_accounts': active_accounts,
         }
         return render(request, 'employees/index.html', context)
     except ObjectDoesNotExist:
