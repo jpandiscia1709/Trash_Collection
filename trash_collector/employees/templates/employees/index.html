@@ -9,15 +9,15 @@ Hello Employee {{ user.username }}!
 Today is {{today}} <br>
 Your Customers Today Are:
 
-<ul>
+<!-- <ul>
     <li>{{ todays_customer }}</li>
-</ul>
+</ul> -->
 
 
-<!-- {% for customer in all_customers%}
-        <li><h2>{{todays_customer}} </h2></li>
+{% for customer in todays_customer %}
+        <li><h2>{{customer.name}} </h2></li>
         {% endfor %}
- -->
+
 
 {% else %}
 <p>You are at the employee index, but you are not logged in.</p>
