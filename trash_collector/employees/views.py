@@ -23,7 +23,7 @@ def index(request):
         weekday_number = today.weekday()
         names_of_days = ['Monday', 'Tuesday', 'Wednesday',
                          'Thursday', 'Friday', 'Saturday', 'Sunday']
-        day_name = (weekday_number, names_of_days)
+        day_name = names_of_days[weekday_number]
         todays_customer = customers_in_zip.filter(
             one_time_pickup=today) | customers_in_zip.filter(weekly_pickup=day_name)
 
