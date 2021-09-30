@@ -8,16 +8,19 @@ Hello Employee {{ user.username }}!
 <br />
 Today is {{today}} <br>
 Your Customers Today Are:
-
+<!-- 
 <ul>
     <li>{{ todays_customer }}</li>
-</ul>
+</ul> -->
 
 
-<!-- {% for customer in all_customers%}
-        <li><h2>{{todays_customer}} </h2></li>
-        {% endfor %}
- -->
+{% for customer in todays_customer%}
+<li>
+    <h2>{{customer.name}} </h2>
+</li>
+<input type="checkbox" id="pickup_Complete" name="pickup_Complete" value="Complete">
+<label for="pickup_Complete"> Pickup Complete</label><br>
+{% endfor %}
 
 {% else %}
 <p>You are at the employee index, but you are not logged in.</p>
