@@ -21,16 +21,25 @@ def index(request):
         # find customers with weekly pickup day of today or onetime pickup of today's date
         today = date.today()
         weekday_number = today.weekday()
-        names_of_days = ['Monday', 'Tuesday', 'Wednesday',
-                         'Thursday', 'Friday', 'Saturday', 'Sunday']
+        names_of_days = ['Monday', 'Tuesday', 'Wednesday','Thursday', 'Friday', 'Saturday', 'Sunday']
         day_name = names_of_days[weekday_number]
         todays_customer = customers_in_zip.filter(
             one_time_pickup=today) | customers_in_zip.filter(weekly_pickup=day_name)
 
+        customer_schedule = Customer.objects.filter(
+            weekly_pickup='Friday')
+
+        # pickup_complete= tk.Checkbutton(text='Pickup Complete',variable=var1, onvalue=1, offvalue=0)
+        # <input type="checkbox" id="pickup_Complete" name="pickup_Complete" value="Complete">
+        #                 <label for="pickup_Complete"> Pickup Complete</label><br>
+
         context = {
             'logged_in_employee': logged_in_employee,
             'today': today,
-            'todays_customer': todays_customer
+            'todays_customer': todays_customer,
+            'customer_schedule': customer_schedule
+
+            # 'pickup_complete'=pickup_complete
 
         }
         return render(request, 'employees/index.html', context)
